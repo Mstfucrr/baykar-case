@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+body {
+  @apply bg-gradient-to-b from-[#FFFBEB] to-[#FFFBEB] text-primary;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.hero-triangle {
+  border-width: 0 0 100vh 198vh;
+  border-color: transparent transparent #FEF3C7 transparent;
+  @apply size-full rotate-0 absolute border-solid;
+}
+
+.shape {
+  @apply absolute -z-10;
+}
