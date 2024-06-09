@@ -1,19 +1,25 @@
-import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
+import NavbarLinks from './navbarLinks'
+import MobileMenuIcon from './mobileMenuIcon'
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const handleMenu = () => setIsMenuOpen(prev => !prev)
+
   return (
-    <nav className='flex items-center justify-between py-5 text-amber-900 container mx-auto'>
+    <nav className='container mx-auto flex items-center justify-between py-5 text-amber-900'>
       <h1 className='text-[32px] font-bold'>Collers</h1>
-      <div className='flex items-center gap-x-7 font-medium max-md:flex-col'>
-        <Link href='#'>Products</Link>
-        <Link href='#'>Solutions</Link>
-        <Link href='#'>Pricing</Link>
-        <Link href='#'>Resources</Link>
-        <Link href='#'>Log In</Link>
-        <Link href='#' passHref legacyBehavior>
-          <button className='rounded-lg border-2 border-[#78350F] bg-transparent px-5 py-2'>Sign up now</button>
-        </Link>
+      <div className='max-md:hidden'>
+        <NavbarLinks />
+      </div>
+
+      {/* mobile */}
+      <div className='md:hidden'>
+        <button onClick={handleMenu}>
+          <MobileMenuIcon isMenuOpen={isMenuOpen} />
+        </button>
+        {isMenuOpen && <NavbarLinks />}
       </div>
     </nav>
   )

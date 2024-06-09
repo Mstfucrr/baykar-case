@@ -3,8 +3,8 @@ import CustomImage from '../image'
 
 const WhyJoinUs = () => {
   return (
-    <section id='whyJoinUs' className='py-8 text-blueGray md:py-40'>
-      <div className='container max-xl:px-0'>
+    <section id='whyJoinUs' className='py-8 text-slate-900 md:py-40'>
+      <div className='container'>
         <div className='rounded-4xl flex size-full items-center justify-between gap-x-10 gap-y-8 bg-white px-5 py-2 drop-shadow-2xl max-lg:flex-col lg:p-20'>
           <div className='flex flex-col gap-y-7 max-lg:items-center max-lg:text-center'>
             <h1 className='-mb-3 text-[56px] font-extrabold'>Why join us</h1>

@@ -1,4 +1,7 @@
 "use client"
+import CollectionShowcase from '@/components/collectionShowcase'
+import Footer from '@/components/footer'
+import GlobalCollectionStats from '@/components/globalCollectionStats'
 import Hero from '@/components/hero'
 import Navbar from '@/components/navbar'
 import Products from '@/components/products'
@@ -13,6 +16,9 @@ export default function Home() {
       <Products />
       <WhyJoinUs />
       <Testimonials />
+      <CollectionShowcase />
+      <GlobalCollectionStats />
+      <Footer />
     </div>
   )
 }

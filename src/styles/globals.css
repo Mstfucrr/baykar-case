@@ -7,7 +7,7 @@
 @import 'swiper/css/pagination';
 
 body {
-  @apply bg-gradient-to-b from-[#FFFBEB] to-[#FFFBEB] text-primary;
+  @apply bg-gradient-to-b from-[#FFFBEB] to-white text-primary;
 }
 
 @layer utilities {

@@ -5,7 +5,7 @@ type ContainerProps = {
 }
 const Container = ({ children }: ContainerProps) => {
   return (
-    <div className='mx-auto size-full relative flex justify-center overflow-x-hidden'>
+    <div className='mx-auto size-full relative flex justify-center overflow-hidden'>
       <div className='w-full'>{children}</div>
     </div>
   )

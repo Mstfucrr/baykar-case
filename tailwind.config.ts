@@ -45,20 +45,6 @@ const config: Config = {
         gray: colors.gray,
         yellow: colors.yellow,
 
-        grey: {
-          50: '#FAFAFA',
-          100: '#F5F5F5',
-          200: '#EEEEEE',
-          300: '#E0E0E0',
-          400: '#BDBDBD',
-          500: '#9E9E9E',
-          600: '#757575',
-          700: '#616161',
-          800: '#424242',
-          900: '#212121'
-        },
-
-        blueGray: '#0F172A'
       }),
       // section container
       container: {
@@ -67,7 +53,7 @@ const config: Config = {
           DEFAULT: '1rem',
           sm: '2rem',
           lg: '4rem',
-          xl: '5rem',
+          xl: '0',
           '2xl': '6rem'
         }
       },

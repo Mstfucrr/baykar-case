@@ -39,7 +39,7 @@ const Testimonials = () => {
 
   return (
     <section id='testimonials' className='py-40 text-slate-900'>
-      <div className='relative flex flex-col gap-y-10'>
+      <div className='relative flex flex-col gap-y-16'>
         <div className='container flex justify-between max-sm:justify-center'>
           <h1 className='text-3xl font-extrabold max-sm:text-center md:text-5xl'>Because they love us</h1>
           <div className='flex items-center gap-x-5 max-sm:hidden'>
@@ -66,7 +66,7 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className='absolute top-16 z-0 size-full md:px-10'>
+        <div className='absolute md:top-20 top-16 z-0 size-full md:px-10'>
           <div className='h-72 bg-amber-200 max-sm:h-64 2xl:h-64' />
         </div>
         <div className='relative'>
@@ -77,6 +77,7 @@ const Testimonials = () => {
             }}
             spaceBetween={24}
             loop
+            centeredSlides
             breakpoints={{
               0: {
                 slidesPerView: 1.2
