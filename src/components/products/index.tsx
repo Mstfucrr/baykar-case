@@ -60,6 +60,7 @@ const Products = () => {
               initial='hidden'
               whileInView='visible'
               transition={{ delay: 0.1, duration: 0.3 }}
+              viewport={{ once: true }}
             />
           </div>
           <div className='relative'>
