@@ -78,9 +78,10 @@ const Testimonials = () => {
             spaceBetween={24}
             loop
             centeredSlides
+            grabCursor
             breakpoints={{
               0: {
-                slidesPerView: 1.2
+                slidesPerView: 1.2,
               },
               650: {
                 slidesPerView: 2.4
@@ -89,7 +90,8 @@ const Testimonials = () => {
                 slidesPerView: 3
               },
               1400: {
-                slidesPerView: 4
+                slidesPerView: 3.7,
+                centeredSlides: false  
               }
             }}
           >

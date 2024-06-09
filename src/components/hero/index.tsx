@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import CustomImage from '@/components/image'
+import { motion } from 'framer-motion'
 
 type HeroCardProps = {
   title: string
@@ -31,41 +32,63 @@ const HeroCard = ({ title, description, icon, iconRectangle }: HeroCardProps) =>
 
 const Hero = () => {
   return (
-    <section id='hero' className='py-20 relative'>
+    <section id='hero' className='relative py-20'>
       <CustomImage
         src='/images/hero/hero-background.svg'
         alt='Hero Background'
-        className='absolute bottom-0 right-0 object-cover -z-10 w-screen min-w-[1400px]'
+        className='absolute bottom-0 right-0 -z-10 w-screen min-w-[1400px] object-cover'
         width={1920}
       />
-      <div className='container flex flex-col md:gap-y-20 gap-y-14 mx-auto text-slate-900'>
+      <div className='container mx-auto flex flex-col gap-y-14 text-slate-900 md:gap-y-20'>
         <div className='flex items-center justify-between gap-x-10 gap-y-20 max-lg:flex-col'>
           <div className='flex basis-2/3 flex-col gap-y-5'>
-            <h1 className='text-7xl font-extrabold'>Collectible Sneakers</h1>
-            <p className='text-lg'>
+            <motion.h1
+              className='text-7xl font-extrabold'
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              Collectible Sneakers
+            </motion.h1>
+            <motion.p
+              className='text-lg'
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+            >
               Sit elit feugiat turpis sed integer integer accumsan turpis. Sed suspendisse nec lorem mauris. Pharetra,
               eu imperdiet ipsum ultrices amet.
-            </p>
-            <div className='flex items-center gap-x-6 font-medium text-amber-900'>
-              <Link href='#' passHref legacyBehavior>
-                <button className='rounded-lg border-2 border-amber-900 bg-transparent px-7 py-2 text-xl'>
-                  Sign up now
-                </button>
+            </motion.p>
+            <motion.div
+              className='flex items-center gap-x-6 font-medium text-amber-900'
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+            >
+              <Link href='#' className='rounded-lg border-2 border-amber-900 bg-transparent px-7 py-2 text-xl'>
+                Sign up now
               </Link>
               <Link href='#' className='flex gap-x-3'>
                 <CustomImage src='/icons/hero/hero-watch.svg' alt='Watch' width={20} height={20} />
                 <span className='font-medium'>Watch Demo</span>
               </Link>
-            </div>
+            </motion.div>
           </div>
           <div className='relative flex w-full basis-1/3 items-center justify-center max-sm:p-5'>
-            <div className='max-xs:w-full relative h-[372px] w-[367px] rounded-[50px] bg-amber-400 max-sm:size-[300px]'>
-              <CustomImage
+            <motion.div className='max-xs:w-full relative h-[372px] w-[367px] rounded-[50px] bg-amber-400 max-sm:size-[300px]'
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+            >
+              <motion.img
                 src='/images/hero/hero-sneaker.png'
                 alt='Sneaker'
                 className='absolute -left-9 bottom-10 min-w-[130%] object-contain'
+                initial={{ rotate: -15 }}
+                animate={{ rotate: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
               />
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className='grid justify-center gap-x-12 gap-y-8 md:grid-cols-3'>

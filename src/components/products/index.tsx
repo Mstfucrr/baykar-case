@@ -1,5 +1,6 @@
 import React from 'react'
 import CustomImage from '../image'
+import { motion } from 'framer-motion'
 
 type ProductCardProps = {
   title: string
@@ -33,6 +34,10 @@ const ProductCard = ({ title, description, image }: ProductCardProps) => {
 }
 
 const Products = () => {
+  const variants = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: { opacity: 1, scale: 1 }
+  }
   return (
     <section id='products' className='bg-slate-900 py-8 md:py-20'>
       <div className='container flex w-full flex-col gap-y-8 text-white md:gap-y-20'>
@@ -49,7 +54,13 @@ const Products = () => {
               description='Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.'
               image='/images/products/product-1.png'
             />
-            <span className='rounded-6xl absolute -left-8 bottom-4 z-[-1] size-72 bg-pink-700' />
+            <motion.span
+              className='absolute -left-8 bottom-4 z-[-1] size-72 rounded-6xl bg-pink-700'
+              variants={variants}
+              initial='hidden'
+              whileInView='visible'
+              transition={{ delay: 0.1, duration: 0.3 }}
+            />
           </div>
           <div className='relative'>
             <ProductCard
@@ -57,8 +68,20 @@ const Products = () => {
               description='Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.'
               image='/images/products/product-2.png'
             />
-            <span className='rounded-6xl absolute -left-6 -top-6 z-[-1] size-40 bg-blue-800/90' />
-            <span className='rounded-4xl absolute -right-4 bottom-6 z-[-1] size-32 bg-amber-700' />
+            <motion.span
+              className='absolute -left-6 -top-6 z-[-1] size-40 rounded-6xl bg-blue-800/90'
+              variants={variants}
+              initial='hidden'
+              animate='visible'
+              transition={{ delay: 0.2, duration: 0.3 }}
+            />
+            <motion.span
+              className='absolute -right-4 bottom-6 z-[-1] size-32 rounded-4xl bg-amber-700'
+              variants={variants}
+              initial='hidden'
+              animate='visible'
+              transition={{ delay: 0.4, duration: 0.3 }}
+            />
           </div>
           <div className='relative'>
             <ProductCard
@@ -66,8 +89,20 @@ const Products = () => {
               description='Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.'
               image='/images/products/product-3.png'
             />
-            <span className='rounded-6xl absolute -right-6 top-8 z-[-1] size-56 bg-green-700' />
-            <span className='rounded-6xl absolute -bottom-8 left-1/2 z-[-1] size-52 -translate-x-1/2 bg-fuchsia-700 max-sm:hidden' />
+            <motion.span
+              className='absolute -right-6 top-8 z-[-1] size-56 rounded-6xl bg-green-700'
+              variants={variants}
+              initial='hidden'
+              animate='visible'
+              transition={{ delay: 0.3, duration: 0.3 }}
+            />
+            <motion.span
+              className='absolute -bottom-8 left-1/2 z-[-1] size-52 -translate-x-1/2 rounded-6xl bg-fuchsia-700 max-sm:hidden'
+              variants={variants}
+              initial='hidden'
+              animate='visible'
+              transition={{ delay: 0.1, duration: 0.3 }}
+            />
           </div>
         </div>
       </div>
