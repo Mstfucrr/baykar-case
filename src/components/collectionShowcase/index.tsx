@@ -25,9 +25,9 @@ const CollectionShowcase = () => {
             </p>
           </div>
           <div className='grid gap-x-20 gap-y-8 lg:grid-cols-7'>
-            <div className='col-span-7 overflow-hidden max-lg:overflow-x-auto lg:col-span-2'>
+            <div className='col-span-1 max-w-fit overflow-hidden max-lg:overflow-x-auto lg:col-span-2'>
               <motion.ul
-                className='flex min-w-max gap-4 max-lg:py-2 lg:flex-col'
+                className='flex gap-4 max-lg:py-2 lg:flex-col'
                 variants={variants}
                 transition={{ staggerChildren: 0.3, delayChildren: 0.5, type: 'spring', stiffness: 200 }}
                 initial='hidden'
@@ -54,10 +54,10 @@ const CollectionShowcase = () => {
                 ))}
               </motion.ul>
             </div>
-            <div className='relative col-span-7 flex w-full lg:col-span-5'>
+            <div className='relative col-span-1 flex w-full lg:col-span-5'>
               {/* Picture1 */}
               <motion.div
-                className='flex h-min w-2/3 flex-col rounded-3xl bg-white p-2 drop-shadow-xl sm:w-[85%]'
+                className='flex h-min w-4/5 flex-col rounded-3xl bg-white p-2 drop-shadow-xl sm:w-[85%]'
                 initial={{ x: 100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
@@ -76,12 +76,11 @@ const CollectionShowcase = () => {
               </motion.div>
               {/* Picture2 */}
               <motion.div
-                className='absolute left-[10%] top-1/4 flex h-min w-2/3 flex-col rounded-3xl bg-white p-2 drop-shadow-xl sm:w-[85%]'
+                className='absolute left-[10%] top-1/4 flex h-min w-4/5 flex-col rounded-3xl bg-white p-2 drop-shadow-xl sm:w-[85%]'
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
                 viewport={{ once: true }}
-
               >
                 <div className='flex gap-x-2 py-2 pl-3'>
                   <span className='size-2 rounded-full bg-rose-600' />
@@ -95,12 +94,12 @@ const CollectionShowcase = () => {
                 />
               </motion.div>
               {/* Picture3 */}
-              <motion.div className='absolute right-[15%] top-1/2 w-1/4 rounded-3xl bg-white p-2 drop-shadow-xl sm:-right-2'
+              <motion.div
+                className='absolute right-[1%] top-1/2 w-1/4 rounded-3xl bg-white p-2 drop-shadow-xl sm:-right-2'
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.5 }}
                 viewport={{ once: true }}
-
               >
                 <CustomImage
                   src='images/collectionShowcase/Picture3.png'
